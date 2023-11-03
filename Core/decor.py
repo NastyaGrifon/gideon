@@ -30,4 +30,5 @@ banner = f""" {lye}
   {lye}[>>] created by {lre}malorento
   {lye}[>>] for channels {lre}"@bh_menu" {lye}and{lre} "staide"
   {lye}[>>] the idea belongs to {lre}NezukA{res}
+  {lye}[>>] impoved by {lre}nastyagrifon{res}
 """
