@@ -9,8 +9,9 @@ menu = f"""
 {lye}
 [1] - Found Nick Information
 [2] - Find Torrent Information
-[3] - Find Phone or Car Number Information
-{lre}[4] - Exit {res}
+[3] - Find Phone Information
+[4] - Find Car Number Information
+{lre}[5] - Exit {res}
 """
 
 chsystem = f"""
@@ -29,9 +30,4 @@ banner = f""" {lye}
   {lye}[>>] created by {lre}malorento
   {lye}[>>] for channels {lre}"@bh_menu" {lye}and{lre} "staide"
   {lye}[>>] the idea belongs to {lre}NezukA{res}
-"""
-
-sher_menu = f"""{lye}
-[1] - Phone Information
-[2] - Car Information{res}
 """
