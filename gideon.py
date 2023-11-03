@@ -75,7 +75,7 @@ while True:
         info = urllib.request.urlopen(url)
         ls = json.load(info)
         res  = rf'''{Fore.LIGHTGREEN_EX}
-        Ciry -> {ls['city']}
+        City -> {ls['city']}
         Region -> {ls["region"]}
         Location -> {ls["loc"]}
         Operator -> {ls["org"]}
@@ -104,7 +104,7 @@ while True:
         info = urllib.request.urlopen(url)
         ls = json.load(info)
         res  = rf'''{Fore.LIGHTGREEN_EX}
-        Ciry -> {ls['city']}
+        City -> {ls['city']}
         Region -> {ls["region"]}
         Location -> {ls["loc"]}
         Operator -> {ls["org"]}
