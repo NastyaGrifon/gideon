@@ -1,15 +1,20 @@
 import requests
 from Core import nickF
 from Core import decor
-import os, sys
+import os
+import sys
 from Core import ts
 from requests import get
 from bs4 import BeautifulSoup
 from colorama import Fore, init
 from prettytable import PrettyTable
-import urllib, json, os
-import requests, os, urllib.request, json, random, time
+import urllib
+import json
+import urllib.request
+import random
+import time
 import platform
+
 
 global system
 if platform.system() == 'Windows':
