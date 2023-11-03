@@ -16,23 +16,25 @@ import time
 import platform
 
 
-global system
-if platform.system() == 'Windows':
-	system = 1;
-elif platform.system() == 'Linux':
-	system = 2;
-else:
-	print(decor.chsystem)
-	system = int(input(f"{decor.lye}[Gideon/chooseSystem] >> "))
+def clear_terminal():
+    system = platform.system()
+    if system == 'Windows':
+        return 'cls'
+    elif system == 'Linux' or system == 'Darwin':
+        return 'clear'
+    else:
+        print(decor.chsystem)
+        system = int(input(f"{decor.lye}[Gideon/chooseSystem] >> "))
+        if system == 1:
+            return 'cls'
+        elif system == 2:
+            return 'clear'
+        else:
+            raise Exception("Unknown OS")
 
-if system == 1:
-    os.system('cls')
-
-elif system == 2:
-    os.system('clear')
-
-else:
-    print(decor.lye + "UNKNOWN VALUE")
+clear_command = clear_terminal()
+if clear_command:
+    os.system(clear_command)
 
 
 print(decor.banner)
@@ -40,10 +42,7 @@ while True:
     print(decor.menu)
     ans = int(input(f"{decor.lye}[Gideon/main] >> {decor.res}"))
     if ans == 1:
-        if system == 1:
-            os.system('cls')
-        elif system == 2:
-            os.system('clear')
+        os.system(clear_command)
         nick = input(f"{decor.lye}Enter Nickname >> ")
         print(f"{decor.lye} Messeagers and Soical Networks:")
         nickF.osint(nickF.snm, nick)
@@ -59,16 +58,8 @@ while True:
         nickF.osint(nickF.other, nick)
         continue
 
-    elif ans == 5:
-        break
-
-
-
     elif ans == 2:
-        if system == 1:
-            os.system('cls')
-        elif system == 2:
-            os.system('clear')
+        os.system(clear_command)
         ip = input(f"{decor.lye}Enter IP >> ")
         url = "https://ipinfo.io/" + ip + "/json"
         info = urllib.request.urlopen(url)
@@ -97,14 +88,8 @@ while True:
         print(f" {Fore.YELLOW}Found {len(torrents)} torrents... \n{Fore.LIGHTGREEN_EX}{output}{Fore.RESET}")
         continue
 
-
-
-
     elif ans == 3:
-        if system == 1:
-            os.system('cls')
-        elif system == 2:
-            os.system('clear')
+        os.system(clear_command)
         phone = input(f"{decor.lre}Enter Phone Number >> ")
         getInfo = "https://htmlweb.ru/geo/api.php?json&telcod=" + phone
         try:
@@ -144,4 +129,5 @@ while True:
         except:
             print(f"{decor.lre}[no result]")
 
-
+    elif ans == 5:
+        break

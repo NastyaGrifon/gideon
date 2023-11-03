@@ -17,7 +17,7 @@ menu = f"""
 chsystem = f"""
 {lre}[!]Choose Your System[!]{lye}
 [1] - Windows
-[2] - Linux/Termux{res}
+[2] - Linux/Termux/Unix{res}
 """
 
 banner = f""" {lye}
