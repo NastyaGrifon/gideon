@@ -59,7 +59,7 @@ while True:
         nickF.osint(nickF.other, nick)
         continue
 
-    elif ans == 4:
+    elif ans == 5:
         break
 
 
@@ -105,48 +105,43 @@ while True:
             os.system('cls')
         elif system == 2:
             os.system('clear')
-        print(decor.sher_menu)
-        vari = input(f"{decor.lye}[Gideon/main/carNphone/category] >> {decor.res}")
-
-        if vari == "2":
-            car_num = input(f"{decor.lye}Enter Car Number(а111аа77) >> ")
-        elif vari == "1":
-            phone = input(f"{decor.lre}Enter Phone Number >> ")
-
+        phone = input(f"{decor.lre}Enter Phone Number >> ")
+        getInfo = "https://htmlweb.ru/geo/api.php?json&telcod=" + phone
         try:
-            if vari == "2":
-                car_nums = car_num.upper()
-                nc = car_num.lower()
-                numb_car = nc[:6] + '.' + nc[6:]
-                a_h = requests.get("https://авто-история.рф/num/" + car_nums + "/")
-                km = requests.get("https://www.230km.ru/" + numb_car + ".nomer")
-                an = requests.get("http://avto-nomer.ru/ru/gallery.php?fastsearch=" + nc)
-                if a_h:
-                    print("https://авто-история.рф/num/" + car_nums + "/")
-
-                    if km:
-                        print("https://www.230km.ru/" + numb_car + ".nomer")
-                    else:
-                        print(f"{decor.lre}[no result]")
-                else:
-                    print(f"{decor.lre}[no result]")
-                if len(nc) < 8:
-                    print(f"{decor.lre}[no result]")
-                else:
-                    print("http://avto-nomer.ru/ru/gallery.php?fastsearch=" + nc)
-            elif vari == "1":
-                getInfo = "https://htmlweb.ru/geo/api.php?json&telcod=" + phone
-                infoPhones = urllib.request.urlopen(getInfo)
-                infoPhone = json.load(infoPhones)
-                print(decor.lye)
-                print(u"Country >>", infoPhone["country"]["name"])
-                print(u"Region >>", infoPhone["region"]["name"])
-                print(u"Operator >>", infoPhone["0"]["oper"])
-                print(u"City >>", infoPhone["0"]["name"])
-                print(decor.res)
+            infoPhones = urllib.request.urlopen(getInfo)
+            infoPhone = json.load(infoPhones)
+            print(decor.lye)
+            print(u"Country >>", infoPhone["country"]["name"])
+            print(u"Region >>", infoPhone["region"]["name"])
+            print(u"Operator >>", infoPhone["0"]["oper"])
+            print(u"City >>", infoPhone["0"]["name"])
+            print(decor.res)
         except:
-            if vari == "2":
+            print(f"{decor.red}[no result]")
+
+    elif ans == 4:
+        car_num = input(f"{decor.lye}Enter Car Number(а111аа77) >> ")
+        car_nums = car_num.upper()
+        nc = car_num.lower()
+        numb_car = nc[:6] + '.' + nc[6:]
+        try:
+            a_h = requests.get("https://авто-история.рф/num/" + car_nums + "/")
+            km = requests.get("https://www.230km.ru/" + numb_car + ".nomer")
+            an = requests.get("http://avto-nomer.ru/ru/gallery.php?fastsearch=" + nc)
+            if a_h:
+                print("https://авто-история.рф/num/" + car_nums + "/")
+
+                if km:
+                    print("https://www.230km.ru/" + numb_car + ".nomer")
+                else:
+                    print(f"{decor.lre}[no result]")
+            else:
                 print(f"{decor.lre}[no result]")
-            elif vari == "1":
-                print(f"{decor.red}[no result]")
+            if len(nc) < 8:
+                print(f"{decor.lre}[no result]")
+            else:
+                print("http://avto-nomer.ru/ru/gallery.php?fastsearch=" + nc)
+        except:
+            print(f"{decor.lre}[no result]")
+
 
