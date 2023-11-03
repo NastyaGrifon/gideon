@@ -9,11 +9,16 @@ from colorama import Fore, init
 from prettytable import PrettyTable
 import urllib, json, os
 import requests, os, urllib.request, json, random, time
+import platform
 
-
-print(decor.chsystem)
 global system
-system = int(input(f"{decor.lye}[Gideon/chooseSystem] >> "))
+if platform.system() == 'Windows':
+	system = 1;
+elif platform.system() == 'Linux':
+	system = 2;
+else:
+	print(decor.chsystem)
+	system = int(input(f"{decor.lye}[Gideon/chooseSystem] >> "))
 
 if system == 1:
     os.system('cls')
