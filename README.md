@@ -1,7 +1,7 @@
 # Gideon 
 🧥🔍 Simple tool for searching and collect information written in Python 3
 
-💰 My btc for donations: 1Ak3xRuLXh5cex3kb53idPNv2jdnpuVRJ2
+💰 Original author btc for donations: 1Ak3xRuLXh5cex3kb53idPNv2jdnpuVRJ2
 
 # Functions:
 1. Search Information about Phone Number
@@ -10,7 +10,7 @@
 4. Search all downloaded Torrents by IP
 
 # Installation:
-``git clone https://github.com/YouVBeenHacked/gideon/``
+``git clone https://github.com/NastyaGrifon/gideon``
 
 ``cd gideon``
 
@@ -23,3 +23,4 @@
 2. Owned by malorento
 3. Copy without copyrightings will burn your soul
 4. The idea of ``gideon`` is belongs to NezukA
+5. Tweaked and improved by nastyagrifon
